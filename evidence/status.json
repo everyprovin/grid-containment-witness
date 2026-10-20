@@ -1,0 +1,28 @@
+{
+  "status": "local verified prototype; frozen-source independent root review closed without important reproducible findings",
+  "source_sha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+  "direct_tests_passed": 43,
+  "exact_sdk_release": "v0.2.12",
+  "full_lint_semantic_passed": true,
+  "schema_passed": true,
+  "constructor_args": [],
+  "live_consensus_tested": false,
+  "deployment": null,
+  "publication": null,
+  "fixture_public_url": null,
+  "fixture_kind": "explicitly synthetic abstract local HTTP mock",
+  "audited": false,
+  "ai_assisted": true,
+  "prototype": true,
+  "independent_review_evidence": "independent-review.json",
+  "independent_reviewer": "/root",
+  "source_changed_during_closeout": false,
+  "tests_rerun_during_closeout": false,
+  "namespace_repair": {
+    "superseded_source_sha256": "832ba181d2c115b72d32864409ed62e8a3764949475a535fd4b0a9014923cf26",
+    "new_source_sha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+    "evidence": "evidence/namespace-fix.json",
+    "independent_final_review": "closed_after_fix",
+    "independent_review_evidence": "evidence/namespace-final-review.json"
+  }
+}

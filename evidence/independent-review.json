@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-20T20:55:16.277Z",
+  "reviewer": "/root",
+  "scope": "Frozen source review: exact-integer orientation/on-segment/parity containment; simple nonzero rings, adjacent overlap and nonadjacent crossing/touch rejection; strictly contained disjoint nonnested holes; canonical rotation/winding; independent fresh fetch/hash/full topology and classification recomputation; owner-reserved bounded point slots, immutable query identity, certificate/revision activation and terminal revocation. Local code review only.",
+  "sourceSha256": "832ba181d2c115b72d32864409ed62e8a3764949475a535fd4b0a9014923cf26",
+  "importantReproducibleFindings": [],
+  "limitations": [
+    "Synthetic integer grid only, not actual geography or safety guidance.",
+    "Classification certificate requires checking current ACTIVE status, certificate and revision; historical data remain readable.",
+    "Source publication and live deployment/consensus unverified."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-20T21:39:23.502Z",
+  "reviewer": "/root",
+  "scope": "Independent narrow review of the namespace correction; not a new full audit or live exploit reproduction.",
+  "source_sha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+  "previous_sha256": "832ba181d2c115b72d32864409ed62e8a3764949475a535fd4b0a9014923cf26",
+  "result": "closed_after_fix",
+  "reviewed": [
+    "Existing anchored host/commit grammar retained; entire URL path namespace checked before source capture.",
+    "Dot-only repository segments rejected; legitimate dotted and underscored repository controls preserved.",
+    "Actual SDK public-API regression source and recorded red-to-green/full semantic/schema evidence reviewed.",
+    "Exact source byte SHA256 binding remains enforced; no arbitrary-content hash bypass asserted.",
+    "No storage, public ABI, business algorithm, deployment or live adoption claim introduced."
+  ],
+  "recordedSdkTests": 43,
+  "checksReexecutedByReviewer": false,
+  "liveMutationPerformed": false
+}

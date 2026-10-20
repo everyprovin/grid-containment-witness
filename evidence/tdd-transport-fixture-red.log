@@ -1,0 +1,65 @@
+........F..........................                                      [100%]
+================================== FAILURES ===================================
+_______ test_rotation_reversal_and_hole_order_canonicalize_identically ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001A1D29E5440>
+
+    def test_rotation_reversal_and_hole_order_canonicalize_identically(direct_vm,direct_deploy):
+        c=deploy(direct_vm,direct_deploy);r={'outer':[[0,0],[10,0],[10,10],[0,10]],'holes':[[[1,1],[2,1],[2,2],[1,2]],[[6,6],[8,6],[8,8],[6,8]]]}
+        register(direct_vm,c,json.dumps(r),'r1');classify(c,5,5,'r1');first=c.get_query('r1','query')['result']
+        r['outer']=list(reversed(r['outer'][1:]+r['outer'][:1]));r['holes']=[list(reversed(h[2:]+h[:2])) for h in reversed(r['holes'])]
+>       register(direct_vm,c,json.dumps(r),'r2');classify(c,5,5,'r2');second=c.get_query('r2','query')['result']
+                                                 ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_contract.py:17: in classify
+    c.request_query(region,query,x,y);return c.classify(region,query,x,y)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\tooling\.venv\Lib\site-packages\gltest\direct\loader.py:432: in _wrapped
+    return attr(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+grid_containment_witness.py:219: in classify
+    packet=_capture(r['source_url'],r['source_sha256'],[x,y],binding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grid_containment_witness.py:162: in _capture
+    return gl.vm.run_nondet_unsafe(leader,validator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\tooling\.venv\Lib\site-packages\gltest\direct\loader.py:161: in _direct_run_nondet_unsafe
+    result = leader_fn()
+             ^^^^^^^^^^^
+grid_containment_witness.py:152: in leader
+    geometry=_region(url,digest)
+             ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+url = 'https://raw.githubusercontent.com/example/abstract-trust-fixtures/0000000000000000000000000000000000000000/region.json'
+digest = '78b1ef0ecc6c268906442a73d3e465d196dd5925408859c58f18738191178a02'
+
+    def _region(url: str,digest: str) -> dict:
+        response=gl.nondet.web.get(url,headers={'Accept':'application/json'})
+        if response.status!=200 or response.body is None or not 1<=len(response.body)<=16384:
+            raise gl.vm.UserError('[SOURCE] unavailable or oversized region')
+        if hashlib.sha256(response.body).hexdigest()!=digest:
+>           raise gl.vm.UserError('[SOURCE] region byte digest mismatch')
+E           genlayer.gl.vm.UserError: UserError(message='[SOURCE] region byte digest mismatch')
+
+grid_containment_witness.py:121: UserError
+=========================== short test summary info ===========================
+FAILED tests/test_contract.py::test_rotation_reversal_and_hole_order_canonicalize_identically
+1 failed, 34 passed in 3.71s
+WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
+INFO: Clearing artifacts directory: artifacts
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet', 'studionet', 'testnet_asimov', 'testnet_bradbury']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False

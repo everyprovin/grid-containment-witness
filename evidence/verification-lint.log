@@ -1,0 +1,1 @@
+{"ok":true,"lint":{"ok":true,"passed":3},"validate":{"ok":true,"contract":"GridContainmentWitness","methods":9,"view_methods":4,"write_methods":5,"ctor_params":0}}

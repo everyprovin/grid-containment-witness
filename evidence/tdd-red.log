@@ -1,0 +1,913 @@
+WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet', 'studionet', 'testnet_asimov', 'testnet_bradbury']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                      [100%]
+================================== FAILURES ===================================
+________ test_exact_outer_hole_and_vertex_classifications[2-2-INSIDE] _________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BDF32B60>
+x = 2, y = 2, want = 'INSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BDF32B60>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BBE89790>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+________ test_exact_outer_hole_and_vertex_classifications[5-5-OUTSIDE] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BDF32FC0>
+x = 5, y = 5, want = 'OUTSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BDF32FC0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE146E70>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_exact_outer_hole_and_vertex_classifications[20-5-OUTSIDE] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE0C37E0>
+x = 20, y = 5, want = 'OUTSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE0C37E0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE17E630>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_exact_outer_hole_and_vertex_classifications[0-5-BOUNDARY] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE202A20>
+x = 0, y = 5, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE202A20>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE20B6E0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_exact_outer_hole_and_vertex_classifications[0-0-BOUNDARY] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE202C00>
+x = 0, y = 0, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE202C00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE2DF5C0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_exact_outer_hole_and_vertex_classifications[3-5-BOUNDARY] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BDF314E0>
+x = 3, y = 5, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BDF314E0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE2FBA70>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_exact_outer_hole_and_vertex_classifications[3-3-BOUNDARY] ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE3B31A0>
+x = 3, y = 3, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE3B31A0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE2FA5A0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+______ test_exact_outer_hole_and_vertex_classifications[10-10-BOUNDARY] _______
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE460CC0>
+x = 10, y = 10, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(2,2,'INSIDE'),(5,5,'OUTSIDE'),(20,5,'OUTSIDE'),(0,5,'BOUNDARY'),(0,0,'BOUNDARY'),(3,5,'BOUNDARY'),(3,3,'BOUNDARY'),(10,10,'BOUNDARY')])
+    def test_exact_outer_hole_and_vertex_classifications(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);cert=classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE460CC0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE48E300>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______ test_rotation_reversal_and_hole_order_canonicalize_identically ________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE4D2980>
+
+    def test_rotation_reversal_and_hole_order_canonicalize_identically(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);r={'outer':[[0,0],[10,0],[10,10],[0,10]],'holes':[[[1,1],[2,1],[2,2],[1,2]],[[6,6],[8,6],[8,8],[6,8]]]}
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE4D2980>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE505370>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+__________ test_concave_half_open_integer_ray_crossing[3-4-OUTSIDE] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE55BD80>
+x = 3, y = 4, want = 'OUTSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(3,4,'OUTSIDE'),(1,4,'INSIDE'),(3,1,'INSIDE'),(2,4,'BOUNDARY')])
+    def test_concave_half_open_integer_ray_crossing(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);body=json.dumps({'outer':[[0,0],[6,0],[6,6],[4,6],[4,2],[2,2],[2,6],[0,6]],'holes':[]});register(direct_vm,c,body);classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE55BD80>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE0318B0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+___________ test_concave_half_open_integer_ray_crossing[1-4-INSIDE] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE6159E0>
+x = 1, y = 4, want = 'INSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(3,4,'OUTSIDE'),(1,4,'INSIDE'),(3,1,'INSIDE'),(2,4,'BOUNDARY')])
+    def test_concave_half_open_integer_ray_crossing(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);body=json.dumps({'outer':[[0,0],[6,0],[6,6],[4,6],[4,2],[2,2],[2,6],[0,6]],'holes':[]});register(direct_vm,c,body);classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE6159E0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE6794C0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+___________ test_concave_half_open_integer_ray_crossing[3-1-INSIDE] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE615BC0>
+x = 3, y = 1, want = 'INSIDE'
+
+    @pytest.mark.parametrize('x,y,want',[(3,4,'OUTSIDE'),(1,4,'INSIDE'),(3,1,'INSIDE'),(2,4,'BOUNDARY')])
+    def test_concave_half_open_integer_ray_crossing(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);body=json.dumps({'outer':[[0,0],[6,0],[6,6],[4,6],[4,2],[2,2],[2,6],[0,6]],'holes':[]});register(direct_vm,c,body);classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE615BC0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BDE401D0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+__________ test_concave_half_open_integer_ray_crossing[2-4-BOUNDARY] __________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE7587C0>
+x = 2, y = 4, want = 'BOUNDARY'
+
+    @pytest.mark.parametrize('x,y,want',[(3,4,'OUTSIDE'),(1,4,'INSIDE'),(3,1,'INSIDE'),(2,4,'BOUNDARY')])
+    def test_concave_half_open_integer_ray_crossing(direct_vm,direct_deploy,x,y,want):
+>       c=deploy(direct_vm,direct_deploy);body=json.dumps({'outer':[[0,0],[6,0],[6,6],[4,6],[4,2],[2,2],[2,6],[0,6]],'holes':[]});register(direct_vm,c,body);classify(c,x,y)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE7587C0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE7258E0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+____________ test_negative_large_coordinates_and_no_float_rounding ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE7C22A0>
+
+    def test_negative_large_coordinates_and_no_float_rounding(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);body=json.dumps({'outer':[[-1000000,-1000000],[1000000,-1000000],[1000000,1000000],[-1000000,1000000]],'holes':[]});register(direct_vm,c,body);classify(c,999999,999999)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE7C22A0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE7B6BD0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____ test_permissionless_execution_cannot_squat_or_change_reserved_point _____
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE857CE0>
+
+    def test_permissionless_execution_cannot_squat_or_change_reserved_point(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);c.request_query('region','q',2,2);other=create_address('other')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE857CE0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE833050>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_distinct_points_have_independent_certificates ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE905260>
+
+    def test_distinct_points_have_independent_certificates(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);a=classify(c,2,2,query='a');b=classify(c,5,5,query='b')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE905260>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE9566C0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+___________ test_forged_full_shape_and_fresh_source_drift_rejected ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BE982C00>
+
+    def test_forged_full_shape_and_fresh_source_drift_rejected(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);classify(c,2,2);packet=copy.deepcopy(c.get_query('region','query')['attestation']);packet['result']['classification']='OUTSIDE'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BE982C00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BE9AD0D0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+____ test_unavailable_source_preserves_requested_query_and_offline_revoke _____
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEA482C0>
+
+    def test_unavailable_source_preserves_requested_query_and_offline_revoke(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c);c.request_query('region','q',2,2);direct_vm.clear_mocks();direct_vm.mock_web(re.escape(META['test_url']),{'status':503,'body':'missing'})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEA482C0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEA6ED50>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+________________ test_invalid_topology_never_certifies[bowtie] ________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEAB5BC0>
+kind = 'bowtie'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEAB5BC0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEB37F80>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+______________ test_invalid_topology_never_certifies[self-touch] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEB43240>
+kind = 'self-touch'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEB43240>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEBC0A70>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+______________ test_invalid_topology_never_certifies[zero-area] _______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEC0CB80>
+kind = 'zero-area'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEC0CB80>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEBD8950>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+__________ test_invalid_topology_never_certifies[closing-duplicate] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEC9A200>
+kind = 'closing-duplicate'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEC9A200>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEBDBBC0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+___________ test_invalid_topology_never_certifies[adjacent-overlap] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BED2FB00>
+kind = 'adjacent-overlap'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BED2FB00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEB57EC0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_invalid_topology_never_certifies[hole-outside] _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEDDD1C0>
+kind = 'hole-outside'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEDDD1C0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEE1FE00>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+___________ test_invalid_topology_never_certifies[hole-outer-touch] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEE02AC0>
+kind = 'hole-outer-touch'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEE02AC0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEE1C140>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+__________ test_invalid_topology_never_certifies[hole-crosses-outer] __________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEF0C180>
+kind = 'hole-crosses-outer'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEF0C180>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEA6D1F0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_invalid_topology_never_certifies[holes-cross] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEF6DA80>
+kind = 'holes-cross'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEF6DA80>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEBDB620>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_invalid_topology_never_certifies[holes-touch] ______________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BEFD9C60>
+kind = 'holes-touch'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BEFD9C60>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BBE8B410>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_invalid_topology_never_certifies[holes-nested] _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF098A40>
+kind = 'holes-nested'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF098A40>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF09EC00>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+______ test_invalid_topology_never_certifies[concave-hole-edge-outside] _______
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF34A2A0>
+kind = 'concave-hole-edge-outside'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF34A2A0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF369EB0>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_______________ test_invalid_topology_never_certifies[boolean] ________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF3ABB00>
+kind = 'boolean'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF3ABB00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF417500>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_________________ test_invalid_topology_never_certifies[nan] __________________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF4493A0>
+kind = 'nan'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF4493A0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BEA2B380>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+____________ test_invalid_topology_never_certifies[duplicate-key] _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF4EAC00>
+kind = 'duplicate-key'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF4EAC00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF48E360>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+__________ test_invalid_topology_never_certifies[too-many-vertices] ___________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF5A04A0>
+kind = 'too-many-vertices'
+
+    @pytest.mark.parametrize('kind',['bowtie','self-touch','zero-area','closing-duplicate','adjacent-overlap','hole-outside','hole-outer-touch','hole-crosses-outer','holes-cross','holes-touch','holes-nested','concave-hole-edge-outside','boolean','nan','duplicate-key','too-many-vertices'])
+    def test_invalid_topology_never_certifies(direct_vm,direct_deploy,kind):
+>       c=deploy(direct_vm,direct_deploy);r=json.loads(BODY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF5A04A0>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF5E6480>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+_____________ test_point_bounds_and_finite_owner_reserved_history _____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001C8BF641D00>
+
+    def test_point_bounds_and_finite_owner_reserved_history(direct_vm,direct_deploy):
+>       c=deploy(direct_vm,direct_deploy);register(direct_vm,c)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contract.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+build = <function direct_deploy.<locals>._deploy at 0x000001C8BF641D00>
+
+    def deploy(vm,build):
+        vm.warp('2026-10-21T00:00:00Z');c=build(str(ROOT/'grid_containment_witness.py'),sdk_version='v0.2.12')
+>       assert hasattr(c,'register_region'),'GridContainmentWitness API not implemented'
+E       AssertionError: GridContainmentWitness API not implemented
+E       assert False
+E        +  where False = hasattr(<CalldataProxy for <_contract_grid_containment_witness.GridContainmentWitness object at 0x000001C8BF687890>>, 'register_region')
+
+tests\test_contract.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[2-2-INSIDE]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[5-5-OUTSIDE]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[20-5-OUTSIDE]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[0-5-BOUNDARY]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[0-0-BOUNDARY]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[3-5-BOUNDARY]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[3-3-BOUNDARY]
+FAILED tests/test_contract.py::test_exact_outer_hole_and_vertex_classifications[10-10-BOUNDARY]
+FAILED tests/test_contract.py::test_rotation_reversal_and_hole_order_canonicalize_identically
+FAILED tests/test_contract.py::test_concave_half_open_integer_ray_crossing[3-4-OUTSIDE]
+FAILED tests/test_contract.py::test_concave_half_open_integer_ray_crossing[1-4-INSIDE]
+FAILED tests/test_contract.py::test_concave_half_open_integer_ray_crossing[3-1-INSIDE]
+FAILED tests/test_contract.py::test_concave_half_open_integer_ray_crossing[2-4-BOUNDARY]
+FAILED tests/test_contract.py::test_negative_large_coordinates_and_no_float_rounding
+FAILED tests/test_contract.py::test_permissionless_execution_cannot_squat_or_change_reserved_point
+FAILED tests/test_contract.py::test_distinct_points_have_independent_certificates
+FAILED tests/test_contract.py::test_forged_full_shape_and_fresh_source_drift_rejected
+FAILED tests/test_contract.py::test_unavailable_source_preserves_requested_query_and_offline_revoke
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[bowtie]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[self-touch]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[zero-area]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[closing-duplicate]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[adjacent-overlap]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[hole-outside]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[hole-outer-touch]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[hole-crosses-outer]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[holes-cross]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[holes-touch]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[holes-nested]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[concave-hole-edge-outside]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[boolean]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[nan] - A...
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[duplicate-key]
+FAILED tests/test_contract.py::test_invalid_topology_never_certifies[too-many-vertices]
+FAILED tests/test_contract.py::test_point_bounds_and_finite_owner_reserved_history
+35 failed in 4.03s

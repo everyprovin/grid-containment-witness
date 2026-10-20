@@ -1,0 +1,10 @@
+{
+  "fixture_kind": "synthetic abstract integer grid region; unpublished local HTTP mock",
+  "test_url": "https://raw.githubusercontent.com/example/abstract-trust-fixtures/0000000000000000000000000000000000000000/region.json",
+  "sha256": "40cd837c0cf8597c3557005b609aa71fdf795dc3c55a5333279a488d85cc13e2",
+  "bytes": 325,
+  "public_url": null,
+  "live_source_verified": false,
+  "test_transport": "explicit HTTP mock from synthetic fixture",
+  "publication_required_before_live_demo": true
+}

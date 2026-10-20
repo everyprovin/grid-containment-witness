@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-20T23:45:57.031Z",
+  "title": "GridContainmentWitness",
+  "kind": "independent_intelligent_contract",
+  "profileSeq": 5,
+  "contractAddress": "0x93eAa735c124C9c8701C0FA88D3b42ef8a03946A",
+  "transactionHash": "0x31d41a2f6a543664ca97c812aab1bbef1a5c84748137a590ba8bce3e5f45c45f",
+  "sourceSha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+  "network": "GenLayer Studio",
+  "chainId": 61999,
+  "constructorArgs": [],
+  "state": "FINALIZED",
+  "executionResult": "SUCCESS",
+  "executionMode": "NORMAL",
+  "leaderOnly": false,
+  "consensusResult": "MAJORITY_AGREE",
+  "value": 0,
+  "liveScope": "Constructor only; real-source polygon/grid containment assessment and activation/revocation lifecycle not exercised live.",
+  "publicSourceBytesVerified": false,
+  "onchainSourceSha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+  "onchainCodeReadbackVerified": true,
+  "publication": null
+}

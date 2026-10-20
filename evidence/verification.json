@@ -1,0 +1,29 @@
+{
+  "source": "grid_containment_witness.py",
+  "source_sha256": "a6804d583ac461e92398a7f37bb6cc6b575cabb1f56745fa9f1326f5415487b1",
+  "genvm_release": "v0.2.12",
+  "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "stdlib": "py-lib-genlayer-std:11rhn002yfajawsz7fai6mykznbxkxs6l91iskj5cm82c92qhy3v",
+  "packages": {
+    "genlayer-test": "0.29.2",
+    "genvm-linter": "0.11.0",
+    "cloudpickle": "3.1.2",
+    "pytest": "9.1.1"
+  },
+  "checks": {
+    "tests": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "lint": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "schema": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "live_consensus_tested": false,
+  "deployment": null
+}
